@@ -23,7 +23,7 @@ spec:
       volumes:
         - name: nginx-data
           persistentVolumeClaim:
-          claimName: {{ .Values.persistence.existingClaim | default (include "<CHARTNAME>.fullname" .) }}
+            claimName: {{ .Values.persistence.existingClaim | default (include "<CHARTNAME>.fullname" .) }}
       {{ end }}
       containers:
         - name: {{ .Chart.Name }}
