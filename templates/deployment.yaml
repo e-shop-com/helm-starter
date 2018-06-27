@@ -21,7 +21,7 @@ spec:
     spec:
       {{- if .Values.persistence.enabled }}
       volumes:
-        - name: nginx-data
+        - name: <CHARTNAME>-data
           persistentVolumeClaim:
             claimName: {{ .Values.persistence.existingClaim | default (include "<CHARTNAME>.fullname" .) }}
       {{ end }}
@@ -35,7 +35,7 @@ spec:
               protocol: TCP
           {{- if .Values.persistence.enabled }}
           volumeMounts:
-            - name: nginx-data
+            - name: <CHARTNAME>-data
               mountPath: /usr/share/nginx/html
               subPath: html
           {{ end }}
