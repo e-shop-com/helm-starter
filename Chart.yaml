@@ -1,7 +1,7 @@
 apiVersion: v1
 appVersion: "1.0"
 description: A Helm chart for Kubernetes
-icon: https://charts.ethibox.fr/charts/ethibox/icon.png
+icon: https://raw.githubusercontent.com/ston3o/helm-starter/master/icon.png
 name: helm-starter
 version: 0.1.0
 keywords:
