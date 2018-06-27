@@ -19,6 +19,12 @@ spec:
         app: {{ template "<CHARTNAME>.name" . }}
         release: {{ .Release.Name }}
     spec:
+      {{- if .Values.persistence.enabled }}
+      volumes:
+        - name: nginx-data
+          persistentVolumeClaim:
+          claimName: {{ .Values.persistence.existingClaim | default (include "<CHARTNAME>.fullname" .) }}
+      {{ end }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -27,14 +33,12 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
+          {{- if .Values.persistence.enabled }}
+          volumeMounts:
+            - name: nginx-data
+              mountPath: /usr/share/nginx/html
+              subPath: html
+          {{ end }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.nodeSelector }}

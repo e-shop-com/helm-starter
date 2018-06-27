@@ -15,5 +15,7 @@ ingress:
 
 persistence:
   enabled: false
+  accessMode: ReadWriteOnce
+  size: 2Gi
   # existingClaim: your-claim
   # storageClassName: "-"
