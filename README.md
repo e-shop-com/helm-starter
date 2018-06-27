@@ -1,6 +1,10 @@
 Helm-starter
 ===
 
+[![License](https://img.shields.io/badge/license-GPL%20v3%2B-yellow.svg?style=flat-square&colorA=0d7377&colorB=44c2c7)](https://raw.githubusercontent.com/ston3o/helm-starter/master/LICENSE.txt)
+[![Build status](https://img.shields.io/travis/ston3o/helm-starter.svg?style=flat-square&colorA=0d7377&colorB=44c2c7)](https://travis-ci.org/ston3o/helm-starter/branches)
+[![Donate](https://img.shields.io/badge/donate-liberapay-blue.svg?style=flat-square&colorA=0d7377&colorB=44c2c7)](https://liberapay.com/ston3o/donate)
+
 A helm starter to create a chart for [ethibox](https://github.com/ston3o/ethibox).
 
 ## Usage
