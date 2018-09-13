@@ -5,7 +5,7 @@ image:
   tag: stable
 
 service:
-  type: NodePort
+  type: ClusterIP
   port: 80
 
 ingress:

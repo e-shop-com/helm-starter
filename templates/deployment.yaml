@@ -18,6 +18,8 @@ spec:
       labels:
         app: {{ template "<CHARTNAME>.name" . }}
         release: {{ .Release.Name }}
+      annotations:
+        backup.ark.heptio.com/backup-volumes: <CHARTNAME>-data
     spec:
       {{- if .Values.persistence.enabled }}
       volumes:
